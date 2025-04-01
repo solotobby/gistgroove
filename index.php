@@ -395,17 +395,17 @@ try {
 <footer>
     <div class="footer-content">
         <div class="footer-section">
-            <h3>MicroBlog</h3>
+            <h3>Gistgroove</h3>
             <p>Short, meaningful posts about things that matter.</p>
         </div>
         
         <div class="footer-section">
             <h3>Quick Links</h3>
             <ul class="footer-links">
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">Contact</a></li>
-                <li><a href="#">Privacy Policy</a></li>
-                <li><a href="#">Terms of Service</a></li>
+                <!-- <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact</a></li> -->
+                <li><a href="privacy.php">Privacy Policy</a></li>
+                <li><a href="terms.php">Terms of Service</a></li>
             </ul>
         </div>
         
