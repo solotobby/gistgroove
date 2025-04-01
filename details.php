@@ -3,7 +3,7 @@
 require_once 'db.php';
 
 if (!isset($_GET['slug'])) {
-    die("Post ID not specified");
+    die("Post does not specified");
 }
 
 $slug = $_GET['slug'];
@@ -240,7 +240,7 @@ $unique_views = $stmt->fetch(PDO::FETCH_ASSOC)['unique_post'];
 <body>
     <header>
         <nav>
-            <h1><a href="/" style="color: white; text-decoration: none;">📝 MicroBlog</a></h1>
+            <h1><a href="/" style="color: white; text-decoration: none;">📝 Gistgroove</a></h1>
         </nav>
     </header>
 
@@ -319,40 +319,6 @@ $unique_views = $stmt->fetch(PDO::FETCH_ASSOC)['unique_post'];
                 </a> -->
             </div>
         </article>
-
-        <!-- <div class="comments-section">
-            <h2>Comments (2)</h2>
-            
-            <div class="comment">
-                <div class="comment-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="white">
-                        <path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 9h12v2H6V9zm8 5H6v-2h8v2zm4-6H6V6h12v2z"/>
-                    </svg>
-                </div>
-                <div>
-                    <div class="comment-meta">
-                        <span>Sarah Johnson</span>
-                        <span>1 hour ago</span>
-                    </div>
-                    <p>Great post! Really enjoyed reading this perspective.</p>
-                </div>
-            </div>
-
-            <div class="comment">
-                <div class="comment-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="white">
-                        <path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 9h12v2H6V9zm8 5H6v-2h8v2zm4-6H6V6h12v2z"/>
-                    </svg>
-                </div>
-                <div>
-                    <div class="comment-meta">
-                        <span>Mike Chen</span>
-                        <span>45 minutes ago</span>
-                    </div>
-                    <p>Thanks for sharing this valuable information!</p>
-                </div>
-            </div>
-        </div> -->
     </div>
 </body>
 </html>
