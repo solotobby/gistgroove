@@ -240,7 +240,7 @@ $unique_views = $stmt->fetch(PDO::FETCH_ASSOC)['unique_post'];
 <body>
     <header>
         <nav>
-            <h1><a href="/" style="color: white; text-decoration: none;"><img src="gistlogo.png" height="150" width="250"> Gistgroove</a></h1>
+            <h1><a href="/" style="color: white; text-decoration: none;"><img src="gistlogo.png" height="150" width="250"></a></h1>
         </nav>
     </header>
 
