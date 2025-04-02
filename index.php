@@ -402,8 +402,8 @@ try {
         <div class="footer-section">
             <h3>Quick Links</h3>
             <ul class="footer-links">
-                <!-- <li><a href="#">About Us</a></li>
-                <li><a href="#">Contact</a></li> -->
+                 <li><a href="about.php">About Us</a></li>
+                <!--<li><a href="#">Contact</a></li> -->
                 <li><a href="privacy.php">Privacy Policy</a></li>
                 <li><a href="terms.php">Terms of Service</a></li>
             </ul>
