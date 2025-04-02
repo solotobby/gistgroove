@@ -277,7 +277,7 @@ try {
 <body>
     <header>
         <nav>
-            <h1><a href="/" style="color: white; text-decoration: none;"><img src="gistlogo.png" height="100" width="200"></a></h1>
+            <h1><a href="/" style="color: white; text-decoration: none;"><img src="gistlogo.png" height="150" width="250"></a></h1>
         </nav>
     </header>
 
