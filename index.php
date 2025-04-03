@@ -395,8 +395,8 @@ try {
 <footer>
     <div class="footer-content">
         <div class="footer-section">
-            <h3>Gistgroove</h3>
-            <p>Short, meaningful posts about things that matter.</p>
+            <img src="gistlogo.png" height="150" width="250"><br>
+            <p>A Blog to share gist and news trending around you!</p>
         </div>
         
         <div class="footer-section">
