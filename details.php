@@ -72,7 +72,7 @@ $unique_views = $stmt->fetch(PDO::FETCH_ASSOC)['unique_post'];
     <meta property="og:title" content="Trending Now in Your Area - Latest Updates">
     <meta property="og:description" content="Find out what's trending near you and share viral news instantly!">
     <meta property="og:image" content="https://gistgroove.com/gistlogo.png">
-    <meta property="og:url" content="https://gistgroove.com">
+    <meta property="og:url" content="https://gistgroove.com/details.php?slug=<?= htmlspecialchars($post['slug']) ?>">
     <meta property="og:type" content="website">
 
      <!-- Basic Twitter Card Tags -->
