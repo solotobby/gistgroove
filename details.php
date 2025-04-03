@@ -62,6 +62,28 @@ $unique_views = $stmt->fetch(PDO::FETCH_ASSOC)['unique_post'];
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Gistgroove" content="Discover what's trending in your area. Get real-time updates on news, entertainment, viral stories, and more. Share trends with the world!">    
+    <meta name="author" content="Gistgroove">
+    <meta name="keywords" content="trending news, viral updates, local trends, latest buzz, breaking news">
+    <link rel="canonical" href="https://gistgroove.com"/>
+
+    <meta property="og:title" content="Trending Now in Your Area - Latest Updates">
+    <meta property="og:description" content="Find out what's trending near you and share viral news instantly!">
+    <meta property="og:image" content="https://gistgroove.com/gistlogo.png">
+    <meta property="og:url" content="https://gistgroove.com">
+    <meta property="og:type" content="website">
+
+     <!-- Basic Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@gist_groove"> 
+    <meta name="twitter:title" content="Trending Now in Your Area - Stay Updated">
+    <meta name="twitter:description" content="Find out what's trending near you and share viral news instantly!">
+    <meta name="twitter:image" content="https://gistgroove.com/gistlogo.png">
+    <meta name="twitter:url" content="https://gistgroove.com/details.php?slug=<?= htmlspecialchars($post['slug']) ?>">
+
+    
     <title><?= htmlspecialchars($post['title']) ?></title>
     <style>
         :root {
