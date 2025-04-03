@@ -32,8 +32,28 @@ try {
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <title>Gistgroove | Real-Time Updates & Local News</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gistgroove</title>
+    <meta name="Gistgroove" content="Discover what's trending in your area. Get real-time updates on news, entertainment, viral stories, and more. Share trends with the world!">    
+    <meta name="author" content="Gistgroove">
+    <meta name="keywords" content="trending news, viral updates, local trends, latest buzz, breaking news">
+    <link rel="canonical" href="https://gistgroove.com"/>
+
+    <meta property="og:title" content="Trending Now in Your Area - Latest Updates">
+    <meta property="og:description" content="Find out what's trending near you and share viral news instantly!">
+    <meta property="og:image" content="https://gistgroove.com/gistlogo.png">
+    <meta property="og:url" content="https://gistgroove.com">
+    <meta property="og:type" content="website">
+
+     <!-- Basic Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@gist_groove"> 
+    <meta name="twitter:title" content="Trending Now in Your Area - Stay Updated">
+    <meta name="twitter:description" content="Find out what's trending near you and share viral news instantly!">
+    <meta name="twitter:image" content="https://gistgroove.com/gistlogo.png">
+    <meta name="twitter:url" content="https://gistgroove.com">
+
+
     <style>
         :root {
             --primary: #6c5ce7;
@@ -396,7 +416,7 @@ try {
     <div class="footer-content">
         <div class="footer-section">
             <img src="gistlogo.png" height="150" width="250"><br>
-            <p>A Blog to share gist and news trending around you!</p>
+            <p>Trending News | Viral Updates | What's Hot in Your City!</p>
         </div>
         
         <div class="footer-section">
