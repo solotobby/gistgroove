@@ -2,7 +2,7 @@
 require_once 'db.php';
 
 // Pagination settings
-$per_page = 1; // Posts per page
+$per_page = 10; // Posts per page
 $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
 $page = max($page, 1); // Ensure page is at least 1
 $offset = ($page - 1) * $per_page;
@@ -54,39 +54,7 @@ try {
     <meta name="twitter:url" content="https://gistgroove.com">
 
     <!-- Add this right after the opening <body> tag -->
-<header>
-    <nav>
-        <div class="nav-container">
-            <div class="nav-brand">
-                <a href="/"><img src="gistlogo.png" height="70" width="120" alt="Gistgroove Logo"></a>
-            </div>
-            
-            <button class="nav-toggle" aria-label="Toggle navigation">
-                <span class="hamburger"></span>
-            </button>
-            
-            <div class="nav-links">
-                <ul>
-                    <li><a href="/">Home</a></li>
-                    <li><a href="trending.php">Trending</a></li>
-                    <li><a href="categories.php">Categories</a></li>
-                    <li><a href="about.php">About</a></li>
-                </ul>
-                
-                <div class="nav-search">
-                    <form action="search.php" method="GET">
-                        <input type="text" placeholder="Search posts..." name="query">
-                        <button type="submit">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="white">
-                                <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
-                            </svg>
-                        </button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </nav>
-</header>
+
 
 
 <!--     <style>
@@ -765,11 +733,45 @@ document.querySelector('.nav-toggle').addEventListener('click', function() {
 </script>
     
 <body>
-    <header>
+<!--     <header>
         <nav>
             <h1><a href="/" style="color: white; text-decoration: none;"><img src="gistlogo.png" height="150" width="250"></a></h1>
         </nav>
-    </header>
+    </header> -->
+
+    <header>
+    <nav>
+        <div class="nav-container">
+            <div class="nav-brand">
+                <a href="/"><img src="gistlogo.png" height="70" width="120" alt="Gistgroove Logo"></a>
+            </div>
+            
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <span class="hamburger"></span>
+            </button>
+            
+            <div class="nav-links">
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="trending.php">Trending</a></li>
+                    <li><a href="categories.php">Categories</a></li>
+                    <li><a href="about.php">About</a></li>
+                </ul>
+                
+                <div class="nav-search">
+                    <form action="search.php" method="GET">
+                        <input type="text" placeholder="Search posts..." name="query">
+                        <button type="submit">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="white">
+                                <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+                            </svg>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
 
     <div class="container">
         <ul class="posts-list">
