@@ -1,216 +1,58 @@
 
+
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
+    <meta name="author" content="Softnio">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Terms and Condition</title>
-    <style>
-        :root {
-            --primary: #6c5ce7;
-            --secondary: #a8a5e6;
-            --background: #f8f9fa;
-            --text: #2d3436;
-            --accent: #e84393;
-        }
+    <link rel="shortcut icon" href="images/faviconss.png">
+    <title>About Gistgroove</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Gistgroove" content="Discover what's trending in your area. Get real-time updates on news, entertainment, viral stories, and more. Share trends with the world!">    
+    <meta name="author" content="Gistgroove">
+    <meta name="keywords" content="trending news, viral updates, local trends, latest buzz, breaking news">
+    <link rel="canonical" href="https://gistgroove.com"/>
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', system-ui, sans-serif;
-        }
+    <meta property="og:title" content="Trending Now in Your Area - Latest Updates">
+    <meta property="og:description" content="Find out what's trending near you and share viral news instantly!">
+    <meta property="og:image" content="https://gistgroove.com/gistlogo.png">
+    <meta property="og:url" content="https://gistgroove.com/details.php?slug">
+    <meta property="og:type" content="website">
 
-        body {
-            background-color: var(--background);
-            color: var(--text);
-            line-height: 1.6;
-        }
-
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 2rem 1rem;
-        }
-
-        header {
-            background: var(--primary);
-            padding: 1.5rem;
-            margin-bottom: 2rem;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-        }
-
-        nav {
-            max-width: 800px;
-            margin: 0 auto;
-            color: white;
-        }
-
-        .back-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: var(--primary);
-            text-decoration: none;
-            margin-bottom: 2rem;
-            padding: 0.5rem 1rem;
-            border-radius: 25px;
-            transition: background 0.2s;
-        }
-
-        .back-link:hover {
-            background: rgba(108, 92, 231, 0.1);
-        }
-
-        .post-detail {
-            background: white;
-            border-radius: 12px;
-            padding: 2rem;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-        }
-
-        .post-header {
-            display: flex;
-            gap: 1.5rem;
-            align-items: flex-start;
-            margin-bottom: 2rem;
-        }
-
-        .post-icon-lg {
-            width: 64px;
-            height: 64px;
-            background: var(--secondary);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-        }
-
-        .post-meta {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            color: #666;
-            font-size: 0.9rem;
-            margin: 1rem 0;
-        }
-
-        .post-meta svg {
-            width: 16px;
-            height: 16px;
-            vertical-align: middle;
-            margin-right: 0.3rem;
-        }
-
-        .post-content {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            margin: 2rem 0;
-        }
-
-        .comments-section {
-            margin-top: 3rem;
-            padding-top: 2rem;
-            border-top: 1px solid #eee;
-        }
-
-        .comment {
-            display: flex;
-            gap: 1.5rem;
-            margin-bottom: 1.5rem;
-            padding: 1.5rem;
-            background: var(--background);
-            border-radius: 12px;
-        }
-
-        .comment-icon {
-            width: 40px;
-            height: 40px;
-            background: var(--secondary);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-        }
-
-        .comment-meta {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            color: #666;
-            font-size: 0.85rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .social-share {
-            display: flex;
-            gap: 1rem;
-            margin-top: 2rem;
-        }
-
-        .social-share a {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.6rem 1.2rem;
-            background: var(--primary);
-            color: white;
-            text-decoration: none;
-            border-radius: 25px;
-            transition: background 0.2s;
-        }
-
-        .social-share a:hover {
-            background: var(--accent);
-        }
-
-        @media (max-width: 600px) {
-            .post-header {
-                flex-direction: column;
-                gap: 1rem;
-            }
-            
-            .post-icon-lg {
-                width: 48px;
-                height: 48px;
-            }
-        }
-    </style>
+     <!-- Basic Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@gist_groove"> 
+    <meta name="twitter:title" content="Trending Now in Your Area - Stay Updated">
+    <meta name="twitter:description" content="Find out what's trending near you and share viral news instantly!">
+    <meta name="twitter:image" content="https://gistgroove.com/gistlogo.png">
+    <meta name="twitter:url" content="https://gistgroove.com/details.php?slug">
+    <link rel="stylesheet" href="assets/css/style.css?v1.5.0">
 </head>
-<body>
-    <header>
-        <nav>
-            <h1><a href="/" style="color: white; text-decoration: none;"><img src="gistlogo.png" height="150" width="250"> Gistgroove</a></h1>
-        </nav>
-    </header>
 
-    <div class="container">
-        <a onclick="window.history.back();"  class="back-link">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/>
-            </svg>
-            Back
-        </a>
-
-        <article class="post-detail">
-            <div class="post-header">
-                <div class="post-icon-lg">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="white">
-                        <path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-7 12h-2v-2h2v2zm0-4h-2V6h2v4z"/>
-                    </svg>
-                </div>
-                <div>
-                   
-                    <h1 style="margin: 1rem 0;"> Terms and Condtions </h1>
-                    
-                </div>
-            </div>
-
-            <div class="post-content">
-               
-
+<body class="nk-body " data-menu-collapse="lg">
+    <div class="nk-app-root ">
+        <?php include 'header.php'; ?>
+        <main class="nk-pages">
+            <section class="section has-mask">
+                <div class="nk-mask bg-pattern-dot bg-blend-around mt-n5 mb-10p mh-50vh"></div>
+                <div class="container">
+                    <div class="section-content">
+                        <div class="row g-gs justify-content-center">
+                            <div class="col-xxl-8 col-xl-9 col-lg-10">
+                                <div class="text-center mb-5">
+                                    <!-- <h6 class="overline-title text-primary">  </h6> -->
+                                    <h1 class="title">Terms of Use</h1>
+                                    
+                                    <!-- <div class="my-5">
+                                        <img class="rounded-4 w-100" src="images/blog/cover.jpg" alt="">
+                                    </div> -->
+                                </div>
+                                <div class="d-flex">
+                                    <div class="block-typo">
+                                  
             1. Acceptance of Terms<br>
 By accessing or using GISTGROOVE, you acknowledge that you have read, understood, and agree to be bound by these Terms, our Privacy Policy, and any other policies or guidelines referenced herein or posted on our website.
 <br>
@@ -265,11 +107,96 @@ We may terminate or suspend your access to the Service at any time, with or with
 If you have any questions about these Terms of Use, please contact us at support@gistgroove.com
 <br>
 
-             </div>
+                                   </div>
+                                </div>
+                            </div><!-- .col -->
+                        </div><!-- .row -->
+                    </div><!-- .section-content -->
+                </div><!-- .container -->
+            </section><!-- .section -->
+           
+            <!-- <section class="section section-sm section-0">
+                <div class="container">
+                    <div class="section-head">
+                        <div class="row justify-content-center text-center">
+                            <div class="col-lg-9 col-xl-8 col-xxl-6">
+                                <h2 class="title">Similar Posts</h2>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="section-content">
+                        <div class="swiper-init position-relative swiper-button-hide-disabled" data-breakpoints='{"0":{"slidesPerView":1}, "778": {"slidesPerView": 2},"1200":{"slidesPerView":3}}' data-space-between="32">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div class="card border-0 shadow-tiny rounded-4">
+                                        <div class="card-body p-4">
+                                            <a class="d-block" href="blog-single.html"><img class="rounded-4 w-100" src="images/blog/a.jpg" alt=""></a>
+                                            <a href="#" class="badge px-3 py-2 mt-4 mb-3 text-bg-primary-soft fw-normal rounded-pill">CopyGen</a>
+                                            <h3><a href="blog-single.html" class="link-dark line-clamp-2">How Content Generators Work &amp; How To Use Them Effectively</a></h3>
+                                            <div class="d-flex pt-4">
+                                                <div class="media media-lg media-middle media-lg rounded-pill">
+                                                    <img src="images/avatar/author/sm-d.jpg" alt="">
+                                                </div>
+                                                <div class="media-info ms-3">
+                                                    <h6 class="mb-1">Ashley Lawson</h6>
+                                                    <ul class="list list-row gx-1">
+                                                        <li>
+                                                            <div class="sub-text">Feb 10, 2023</div>
+                                                        </li>
+                                                        <li><em class="icon mx-0 ni ni-dot"></em></li>
+                                                        <li>
+                                                            <div class="sub-text">11 min read</div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            <div class="swiper-button-prev btn btn-icon btn-dark btn-soft rounded-pill position-absolute top-50 start-0 translate-middle z-index-1"><em class="icon ni ni-arrow-long-left"></em></div>
+                            <div class="swiper-button-next btn btn-icon btn-dark btn-soft rounded-pill position-absolute top-50 start-100 translate-middle z-index-1"><em class="icon ni ni-arrow-long-right"></em></div>
+                        </div>
+                    </div>
+                </div>
+            </section> -->
+            
+            <!-- .section -->
+            <!-- <section class="section section-bottom-0">
+                <div class="container">
+                    <div class="section-wrap bg-primary bg-opacity-10 rounded-4">
+                        <div class="section-content bg-pattern-dot-sm p-4 p-sm-6">
+                            <div class="row justify-content-center text-center">
+                                <div class="col-xl-8 col-xxl-9">
+                                    <div class="block-text">
+                                        <h6 class="overline-title text-primary">Boost your writing productivity</h6>
+                                        <h2 class="title">End writer’s block today</h2>
+                                        <p class="lead mt-3">It’s like having access to a team of copywriting experts writing powerful copy for you in 1-click.</p>
+                                        <ul class="btn-list btn-list-inline">
+                                            <li><a href="#" class="btn btn-lg btn-primary"><span>Start writing for free</span><em class="icon ni ni-arrow-long-right"></em></a></li>
+                                        </ul>
+                                        <ul class="list list-row gy-0 gx-3">
+                                            <li><em class="icon ni ni-check-circle-fill text-success"></em><span>No credit card required</span></li>
+                                            <li><em class="icon ni ni-check-circle-fill text-success"></em><span>Cancel anytime</span></li>
+                                            <li><em class="icon ni ni-check-circle-fill text-success"></em><span>10+ tools to expolore</span></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section> -->
 
-             </article>
-
-        
+        </main>
+       <?php include 'footer.php'; ?>
     </div>
+    <script src="assets/js/bundle.js?v1.5.0"></script>
+    <script src="assets/js/scripts.js?v1.5.0"></script>
 </body>
+
 </html>
+
+
