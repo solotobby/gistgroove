@@ -119,7 +119,7 @@ try {
                         <div class="row justify-content-center text-center">
                             <div class="col-lg-9 col-xl-7 col-xxl-6">
                                 <!-- <h6 class="overline-title text-primary">Blog</h6> -->
-                                <h1 class="title">News, tips and resources about copygenAI</h1>
+                                <h1 class="title">Real-Time Updates & Local News</h1>
 
                                 <!-- <label id="blog-search" class="d-flex align-items-center border rounded-3 py-2 px-4 mt-5 mt-lg-7 bg-white">
                                     <em class="icon me-3 fs-3 ni ni-search"></em>
@@ -219,7 +219,7 @@ try {
                     </div>
                 </div>
             </section> -->
-            
+
         </main>
         <?php include 'footer.php'; ?>
     </div>
