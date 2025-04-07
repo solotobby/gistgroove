@@ -2,7 +2,7 @@
 require_once 'db.php';
 
 // Pagination settings
-$per_page = 5; // Posts per page
+$per_page = 1; // Posts per page
 $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
 $page = max($page, 1); // Ensure page is at least 1
 $offset = ($page - 1) * $per_page;
@@ -30,7 +30,7 @@ try {
 ?>
 <!DOCTYPE html>
 <html lang="en">
-<head>
+
     <meta charset="UTF-8">
     <title>Gistgroove | Real-Time Updates & Local News</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -53,8 +53,43 @@ try {
     <meta name="twitter:image" content="https://gistgroove.com/gistlogo.png">
     <meta name="twitter:url" content="https://gistgroove.com">
 
+    <!-- Add this right after the opening <body> tag -->
+<header>
+    <nav>
+        <div class="nav-container">
+            <div class="nav-brand">
+                <a href="/"><img src="gistlogo.png" height="70" width="120" alt="Gistgroove Logo"></a>
+            </div>
+            
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <span class="hamburger"></span>
+            </button>
+            
+            <div class="nav-links">
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="trending.php">Trending</a></li>
+                    <li><a href="categories.php">Categories</a></li>
+                    <li><a href="about.php">About</a></li>
+                </ul>
+                
+                <div class="nav-search">
+                    <form action="search.php" method="GET">
+                        <input type="text" placeholder="Search posts..." name="query">
+                        <button type="submit">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="white">
+                                <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+                            </svg>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
 
-    <style>
+
+<!--     <style>
         :root {
             --primary: #6c5ce7;
             --secondary: #a8a5e6;
@@ -292,8 +327,443 @@ try {
             pointer-events: none;
         }
 
-    </style>
+    </style> -->
 </head>
+
+    <style>
+/* Add these styles to the existing CSS */
+
+         :root {
+            --primary: #6c5ce7;
+            --secondary: #a8a5e6;
+            --background: #f8f9fa;
+            --text: #2d3436;
+            --accent: #e84393;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', system-ui, sans-serif;
+        }
+
+        body {
+            background-color: var(--background);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        header {
+            background: var(--primary);
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            max-width: 800px;
+            margin: 0 auto;
+            color: white;
+        }
+
+        .posts-list {
+            list-style: none;
+        }
+
+        .post-item {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: flex;
+            gap: 1.5rem;
+            align-items: flex-start;
+        }
+
+        .post-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .post-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--secondary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .post-content {
+            flex-grow: 1;
+        }
+
+        .post-meta {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            color: #666;
+            font-size: 0.9rem;
+            margin: 0.5rem 0;
+        }
+
+        .post-meta svg {
+            width: 16px;
+            height: 16px;
+            vertical-align: middle;
+            margin-right: 0.3rem;
+        }
+
+        .read-more {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.6rem 1.2rem;
+            background: var(--primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            margin-top: 1rem;
+            transition: background 0.2s;
+        }
+
+        .read-more:hover {
+            background: var(--accent);
+        }
+
+        .category-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.4rem 0.8rem;
+            background: var(--secondary);
+            color: white;
+            border-radius: 20px;
+            font-size: 0.85rem;
+        }
+
+        @media (max-width: 600px) {
+            .post-item {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .post-icon {
+                width: 40px;
+                height: 40px;
+            }
+        }
+
+        /* Add to existing CSS */
+    body {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+    }
+
+    .container {
+        flex: 1;
+    }
+
+    footer {
+        background: var(--primary);
+        color: white;
+        padding: 2rem 1rem;
+        margin-top: 3rem;
+    }
+
+    .footer-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 2rem;
+    }
+
+    .footer-section {
+        flex: 1;
+        min-width: 250px;
+    }
+
+    .footer-section h3 {
+        margin-bottom: 1rem;
+        color: var(--secondary);
+    }
+
+    .footer-links {
+        list-style: none;
+    }
+
+    .footer-links a {
+        color: white;
+        text-decoration: none;
+        display: block;
+        margin-bottom: 0.5rem;
+        transition: opacity 0.2s;
+    }
+
+    .footer-links a:hover {
+        opacity: 0.8;
+    }
+
+    .footer-bottom {
+        text-align: center;
+        margin-top: 2rem;
+        padding-top: 1rem;
+        border-top: 1px solid rgba(255,255,255,0.1);
+    }
+
+    @media (max-width: 768px) {
+        .footer-section {
+            flex-basis: 100%;
+            text-align: center;
+        }
+    }
+
+    .pagination {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            margin: 2rem 0;
+        }
+
+        .page-item {
+            padding: 0.5rem 1rem;
+            background: white;
+            border-radius: 4px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            transition: all 0.2s;
+        }
+
+        .page-item a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .page-item:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+        }
+
+        .page-item.active {
+            background: var(--primary);
+        }
+
+        .page-item.active a {
+            color: white;
+        }
+
+        .page-item.disabled {
+            opacity: 0.5;
+            pointer-events: none;
+        }
+
+        
+header {
+    background: var(--primary);
+    padding: 1rem 0;
+    position: relative;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-brand img {
+    transition: transform 0.3s ease;
+}
+
+.nav-brand img:hover {
+    transform: scale(1.05);
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.nav-links ul {
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--secondary);
+}
+
+.nav-search form {
+    display: flex;
+    align-items: center;
+    background: rgba(255,255,255,0.1);
+    border-radius: 25px;
+    padding: 0.3rem;
+}
+
+.nav-search input {
+    border: none;
+    background: transparent;
+    color: white;
+    padding: 0.5rem 1rem;
+    outline: none;
+    min-width: 200px;
+}
+
+.nav-search input::placeholder {
+    color: rgba(255,255,255,0.7);
+}
+
+.nav-search button {
+    background: var(--secondary);
+    border: none;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.nav-search button:hover {
+    background: var(--accent);
+}
+
+/* Mobile Styles */
+.nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 1rem;
+    z-index: 1000;
+}
+
+.hamburger {
+    display: block;
+    width: 25px;
+    height: 2px;
+    background: white;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.hamburger::before,
+.hamburger::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: white;
+    transition: all 0.3s ease;
+}
+
+.hamburger::before {
+    top: -6px;
+}
+
+.hamburger::after {
+    top: 6px;
+}
+
+/* Mobile Menu */
+@media (max-width: 768px) {
+    .nav-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: var(--primary);
+        flex-direction: column;
+        gap: 1rem;
+        padding: 2rem;
+        transform: translateY(-100%);
+        opacity: 0;
+        transition: all 0.3s ease;
+        z-index: 999;
+    }
+
+    .nav-links.active {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    .nav-links ul {
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-search {
+        width: 100%;
+    }
+
+    .nav-search form {
+        width: 100%;
+    }
+
+    .nav-search input {
+        width: 100%;
+    }
+}
+
+/* Toggle Animation */
+.nav-toggle.active .hamburger {
+    background: transparent;
+}
+
+.nav-toggle.active .hamburger::before {
+    transform: rotate(45deg);
+    top: 0;
+}
+
+.nav-toggle.active .hamburger::after {
+    transform: rotate(-45deg);
+    top: 0;
+}
+</style>
+
+<script>
+// Add this JavaScript before closing </body>
+document.querySelector('.nav-toggle').addEventListener('click', function() {
+    this.classList.toggle('active');
+    document.querySelector('.nav-links').classList.toggle('active');
+});
+</script>
+    
 <body>
     <header>
         <nav>
