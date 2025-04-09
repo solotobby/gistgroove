@@ -143,6 +143,7 @@ $unique_views = $stmt->fetch(PDO::FETCH_ASSOC)['unique_post'];
                                             // Display formatted version (with line breaks for each paragraph)
                                             $formatted = nl2br(trim($plainText));
                                         ?>
+                                        
                                         <?= $formatted ?>
 
                                    
