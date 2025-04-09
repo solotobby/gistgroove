@@ -62,6 +62,17 @@ try {
 
     <link rel="stylesheet" href="assets/css/style.css?v1.5.0"> 
 
+    <script type="text/javascript">
+        atOptions = {
+            'key' : 'd8673243f5c19b0a82c8d8e3e7e98c6e',
+            'format' : 'iframe',
+            'height' : 300,
+            'width' : 160,
+            'params' : {}
+        };
+    </script>
+    <script type="text/javascript" src="//www.highperformanceformat.com/d8673243f5c19b0a82c8d8e3e7e98c6e/invoke.js"></script>
+
     <style>
   .pagination {
             display: flex;
@@ -148,7 +159,7 @@ try {
                                                 // Display formatted version (with line breaks for each paragraph)
                                                 $formatted = nl2br(trim($plainText));
                                             ?>
-                                            
+
                                             <?= substr($formatted, 0, 150) ?>...
                                         </p>
                                         <div class="d-flex pt-4">                                            

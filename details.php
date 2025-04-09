@@ -86,6 +86,19 @@ $unique_views = $stmt->fetch(PDO::FETCH_ASSOC)['unique_post'];
     <meta name="twitter:image" content="https://gistgroove.com/gistlogo.png">
     <meta name="twitter:url" content="https://gistgroove.com/details.php?slug=<?= htmlspecialchars($post['slug']) ?>">
     <link rel="stylesheet" href="assets/css/style.css?v1.5.0">
+
+    <script type="text/javascript">
+        atOptions = {
+            'key' : 'd8673243f5c19b0a82c8d8e3e7e98c6e',
+            'format' : 'iframe',
+            'height' : 300,
+            'width' : 160,
+            'params' : {}
+        };
+    </script>
+    <script type="text/javascript" src="//www.highperformanceformat.com/d8673243f5c19b0a82c8d8e3e7e98c6e/invoke.js"></script>
+
+
 </head>
 
 <body class="nk-body " data-menu-collapse="lg">
