@@ -1,5 +1,6 @@
 <footer class="nk-footer">
             <div class="section">
+                <hr>
                 <div class="container">
                     <div class="row g-5">
                         

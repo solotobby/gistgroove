@@ -121,19 +121,98 @@ $unique_views = $stmt->fetch(PDO::FETCH_ASSOC)['unique_post'];
                                 </div>
                                 <div class="d-flex">
                                     <div class="block-typo">
-                                    <?= htmlspecialchars($post['body']) ?>
+                                        <?php 
+                                            $html = $post['body'];
+                                            // Remove HTML tags and decode any HTML entities
+                                            $plainText = strip_tags($html);
+                                            $plainText = html_entity_decode($plainText);
+                                            
+                                            // Display formatted version (with line breaks for each paragraph)
+                                            $formatted = nl2br(trim($plainText));
+                                        ?>
+                                        <?= $formatted ?>
+
+                                   
+
+                                        <!-- <div class="block-text pt-lg-4">
+
+                                        
+                                            <h5>Leanne</h5> 
+                                            <p>Must explain to you how all this mistaken idea of denouncing pleasure and praising born and I will give you a complete account of the system.</p>
+
+                                            <h5>John Mark</h5>
+                                            <p>Must explain to you how all this mistaken idea of denouncing pleasure and praising born and I will give you a complete account of the system.</p>
+
+
+
+                                            <form data-action="" method="post" class="form-submit-init">
+                                                <div class="row g-4">
+                                                    <div class="col-12">
+                                                        <div class="form-group">
+                                                            <div class="form-control-wrap">
+                                                                <input type="text" name="user-name" class="form-control form-control-lg" placeholder="Your Name" required>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                  
+                                                    <div class="col-12">
+                                                        <div class="form-group">
+                                                            <div class="form-control-wrap">
+                                                                <input type="email" name="user-email" class="form-control form-control-lg" placeholder="Your Email Address" required>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                   
+                                                    <div class="col-12">
+                                                        <div class="form-group">
+                                                            <div class="form-control-wrap">
+                                                                <input type="text" name="user-subject" class="form-control form-control-lg" placeholder="Subject" required>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                  
+                                                    <div class="col-12">
+                                                        <div class="form-group">
+                                                            <div class="form-control-wrap">
+                                                                <textarea name="user-message" class="form-control form-control-lg" placeholder="Enter your message" required></textarea>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                  
+                                                    <div class="col-12">
+                                                        <div class="form-group">
+                                                            <button class="btn btn-primary" type="submit" id="submit-btn">Send Message</button>
+                                                        </div>
+                                                        <div class="form-result mt-4"></div>
+                                                    </div>
+                                                </div>
+                                               
+                                            </form>
+
+                                        </div> -->
                                    </div>
                                     <ul class="btn-list gy-3 ps-xl-6 ps-lg-4 ps-3">
                                         <li><a class="link-secondary" href="https://www.facebook.com/sharer/sharer.php?u=https://gistgroove.com/?slug=<?= $post['slug'] ?>"><em class="icon fs-3 ni ni-facebook-circle"></em></a></li>
                                         <li><a class="link-secondary" href="https://twitter.com/intent/tweet?url=https://gistgroove.com/?slug=<?= $post['slug'] ?>"><em class="icon fs-3 ni ni-twitter"></em></a></li>
                                         <li><a class="link-secondary" href="https://www.linkedin.com/sharing/share-offsite/?url=https://gistgroove.com/?slug=<?= $post['slug'] ?>"><em class="icon fs-3 ni ni-linkedin-round"></em></a></li>
                                     </ul>
+
+                                    
                                 </div>
+
+
                             </div><!-- .col -->
                         </div><!-- .row -->
+                        
                     </div><!-- .section-content -->
+
+                        
+
+
                 </div><!-- .container -->
             </section><!-- .section -->
+
+        
            
             <!-- <section class="section section-sm section-0">
                 <div class="container">

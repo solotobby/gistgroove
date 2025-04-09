@@ -139,7 +139,17 @@ try {
                                         <a href="details.php?slug=<?= $post['slug'] ?>" class="badge px-3 py-2 mt-4 mb-3 text-bg-primary-soft fw-normal rounded-pill"><?= htmlspecialchars($post['category_name']) ?></a>
                                         <h3><a href="details.php?slug=<?= $post['slug'] ?>" class="link-dark line-clamp-2"><?= htmlspecialchars($post['title']) ?></a></h3>
                                         <p>
-                                            <?= substr(htmlspecialchars($post['body']), 0, 150) ?>...
+
+                                        <?php 
+                                            $html = $post['body'];
+                                            // Remove HTML tags and decode any HTML entities
+                                            $plainText = strip_tags($html);
+                                            $plainText = html_entity_decode($plainText);
+                                            
+                                            // Display formatted version (with line breaks for each paragraph)
+                                            $formatted = nl2br(trim($plainText));
+                                        ?>
+                                            <?= substr(htmlspecialchars($formatted), 0, 150) ?>...
                                         </p>
                                         <div class="d-flex pt-4">                                            
                                             <div class="media media-lg media-middle media-lg rounded-pill">
