@@ -87,8 +87,7 @@ $unique_views = $stmt->fetch(PDO::FETCH_ASSOC)['unique_post'];
     <meta name="twitter:url" content="https://gistgroove.com/details.php?slug=<?= htmlspecialchars($post['slug']) ?>">
     <link rel="stylesheet" href="assets/css/style.css?v1.5.0">
    
-    <script type='text/javascript' src='//pl26337611.profitableratecpm.com/90/b0/69/90b0698c0f5a19eec5bf3475787a3504.js'></script>
-    
+   
     <script async="async" data-cfasync="false" src="//pl26337750.profitableratecpm.com/293606dd35843d6209f6545f1ca62d2c/invoke.js"></script>
     <div id="container-293606dd35843d6209f6545f1ca62d2c"></div>
 
